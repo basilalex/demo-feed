@@ -1,0 +1,52 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Oleksandr Bazylevskyi <bazylevskyioleksandr@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "analyze": "react-scripts build && source-map-explorer 'build/static/js/*.js'"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.2.1",
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "^1.2.12",
+    "apollo-link-http": "^1.5.15",
+    "apollo-link-ws": "^1.0.18",
+    "formik": "^1.5.8",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "history": "^4.9.0",
+    "lodash.throttle": "^4.1.1",
+    "react": "16.8.6",
+    "react-apollo": "^2.5.8",
+    "react-dom": "16.8.6",
+    "react-masonry-component": "^6.2.1",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.1",
+    "source-map-explorer": "^2.0.1",
+    "subscriptions-transport-ws": "^0.9.16",
+    "yup": "^0.27.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "not ie > 0",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

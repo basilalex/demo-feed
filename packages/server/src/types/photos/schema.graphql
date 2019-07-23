@@ -1,0 +1,101 @@
+type Photo {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  width: Int!
+  height: Int!
+  color: String!
+  description: String
+  sponsored: Boolean
+  likes: Int!
+  liked_by_user: Boolean
+  slug: String
+  user: PhotoUser!
+  links: PhotoLinks!
+  urls: PhotoUrls!
+  exif: PhotoExif
+  location: PhotoLocation
+}
+
+type PhotoExif {
+  make: String!
+  model: String!
+  exposure_time: String!
+  aperture: String!
+  focal_length: String!
+  iso: Float!
+}
+
+type PhotoLocation {
+  city: String
+  country: String
+  position: PhotoCoordinates
+  name: String
+  title: String
+}
+
+type PhotoCoordinates {
+  latitude: Float!
+  longitude: Float!
+}
+
+type PhotoLinks {
+  self: String!
+  html: String!
+  download: String!
+  download_location: String!
+}
+
+type PhotoUrls {
+  raw: String!
+  full: String!
+  regular: String!
+  small: String!
+  thumb: String!
+  custom: String
+}
+
+type PhotoUser {
+  id: ID!
+  updated_at: String!
+  username: String!
+  name: String!
+  first_name: String!
+  last_name: String!
+  twitter_username: String
+  portfolio_url: String
+  bio: String
+  location: String
+  instagram_username: String
+  total_collections: Int!
+  total_likes: Int!
+  total_photos: Int!
+  profile_image: UserProfileImage!
+  links: UserLinks!
+}
+
+type UserProfileImage {
+  small: String!
+  medium: String!
+  large: String!
+}
+
+type UserLinks {
+  self: String!
+  html: String!
+  photos: String!
+  likes: String!
+  portfolio: String!
+  following: String!
+  followers: String!
+}
+
+input ListPhotosInput {
+  page: Int
+  perPage: Int
+  orderBy: String
+}
+
+extend type Query {
+  listPhotos(input: ListPhotosInput!): [Photo!]!
+}

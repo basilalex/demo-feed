@@ -1,0 +1,23 @@
+scalar Date
+
+type User {
+  id: ID!
+  email: String!
+  password: String!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Query {
+  user: User
+}
+
+type LoginRegisterPayload {
+  user: User
+  tokens: [String]!
+}
+
+type Mutation {
+  login(email: String!, password: String!): LoginRegisterPayload
+  register(email: String!, password: String!): LoginRegisterPayload
+}
